@@ -1,0 +1,67 @@
+$rose: #E84CA4;
+
+
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+}
+
+@mixin phone_portrait {
+    @media screen and (min-device-width : 320px)
+    and (orientation : portrait){
+        @content;
+    }
+}
+
+@mixin phone_landscape {
+    @media screen and (min-device-width : 320px)
+            and (orientation : landscape){
+                @content;
+            }
+}
+
+@mixin tablet {
+    @media only screen
+        and (min-device-width : 768px){
+        /* STYLES GO HERE */
+            @content;
+        }
+}
+@mixin laptop_desktop {
+    @media only screen
+        and (min-width : 1023px){
+        /* STYLES GO HERE */
+            @content;
+        }
+}
+
+@mixin large_screen {
+    @media only screen
+        and (min-width : 1824px) {
+
+        @content;
+        }
+}
+
+@mixin laptop_and_large_screen {
+    @media only screen
+        and (min-device-width : 1023px)  {
+        @content;
+        }
+}
