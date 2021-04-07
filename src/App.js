@@ -80,7 +80,9 @@ class App extends React.Component{
   }
 
   render(){
-    var {words,currentIndexLetter, nbTryError, finishGame} = this.state
+    var {words,currentIndexLetter, nbTryError, finishGame} = this.state;
+    var win = words.length === currentIndexLetter.length
+
     return (
       <div className="App">
         <div className="title">
@@ -151,8 +153,16 @@ class App extends React.Component{
             <h2>le mot est: {words.join('')} </h2>
             </div>
             ) : (
-              <div className="result-box">
+              win ? (
+                <div className="result-box">
+                <h1>Félicitation !</h1>
+                <h2>Vous avez gagné !</h2>
+                </div>
+              ) : (
+                <div className="result-box">
               </div>
+              )
+
             )
 
         }
